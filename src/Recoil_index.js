@@ -70,6 +70,10 @@ const {
   waitForNone,
 } = require('./recoil_values/Recoil_WaitFor');
 
+const cacheMostRecent = require('./caches/Recoil_cacheMostRecent');
+const cacheWithReferenceEquality = require('./caches/Recoil_cacheWithReferenceEquality');
+const cacheWithValueEquality = require('./caches/Recoil_cacheWithValueEquality');
+
 module.exports = {
   // Types
   DefaultValue,
@@ -114,4 +118,9 @@ module.exports = {
 
   // Other functions
   isRecoilValue,
+
+  // Caches
+  cacheMostRecent,
+  cacheWithReferenceEquality,
+  cacheWithValueEquality,
 };
