@@ -75,7 +75,9 @@ function Batcher(props: {setNotifyBatcherOfChange: (() => void) => void}) {
   const storeRef = useStoreRef();
 
   const [_, setState] = useState([]);
-  props.setNotifyBatcherOfChange(() => setState({}));
+  props.setNotifyBatcherOfChange(() => {
+    setTimeout(() => setState({}), 0);
+  });
 
   useEffect(() => {
     // enqueueExecution runs this function immediately; it is only used to

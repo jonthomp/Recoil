@@ -582,7 +582,9 @@ const useStoreRef = () => useContext(AppContext);
 function Batcher(props) {
   const storeRef = useStoreRef();
   const [_, setState] = useState([]);
-  props.setNotifyBatcherOfChange(() => setState({}));
+  props.setNotifyBatcherOfChange(() => {
+    setTimeout(() => setState({}), 0);
+  });
   useEffect(() => {
     // enqueueExecution runs this function immediately; it is only used to
     // manipulate the order of useEffects during tests, since React seems to
